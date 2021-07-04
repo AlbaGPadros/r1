@@ -21,6 +21,7 @@ public class EscollirNivell {
 		case 1:
 			System.out.println("NIVELL 1");
 			nivell1.introdueixNom();
+			introNivell();
 			break;
 		case 2:
 			System.out.println("NIVELL 2");
