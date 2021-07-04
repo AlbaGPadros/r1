@@ -146,11 +146,11 @@ Scanner entrada = new Scanner(System.in);
 					
 				//Imprimeix el resultat de la reordenació.
 				System.out.println("\n" + "Ciutats amb els noms invertits:");
-				System.out.println(ciutatarray1);
-				System.out.println(ciutatarray2);
-				System.out.println(ciutatarray3);
-				System.out.println(ciutatarray4);
-				System.out.println(ciutatarray5);
+				System.out.println(ciutat1 + " - " + String.valueOf(ciutatarray1));
+				System.out.println(ciutat2 + " - " + String.valueOf(ciutatarray2));
+				System.out.println(ciutat3 + " - " + String.valueOf(ciutatarray3));
+				System.out.println(ciutat4 + " - " + String.valueOf(ciutatarray4));
+				System.out.println(ciutat5 + " - " + String.valueOf(ciutatarray5));
 				
 				System.out.println("\n" + "Fi de l'exercici" + "\n");
 				introNivell();
