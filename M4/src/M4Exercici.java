@@ -121,7 +121,7 @@ public void comprovaseguirDemanant() throws ExcepcioRespostaNumericaIncorrecta, 
 public void mostraPlats() {
 	System.out.println("Has demanat:");
 	for(int i = 0; i<comptadorPlats; i++) {
-		System.out.println(platsDemanats.get(i));
+		System.out.println(" - " +platsDemanats.get(i));
 	}
 	sumaPreu();
 }
