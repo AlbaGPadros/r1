@@ -5,16 +5,16 @@ import java.util.ArrayList;
 
 public class Video {
 	
-String url = ""; 
-String titol; 
-String duradaString;
-int duradaVideo;
-LocalDate dataUpload; 
-EstatReproduccio estatReproduccio = EstatReproduccio.PLAY; 
-EstatUpload estatUpload; 
-ArrayList<Tag> llistatEtiquetes = new ArrayList<Tag>();
-String etiquetesString = ""; 
-boolean videoaturat = false; 
+private String url = ""; 
+private String titol; 
+private String duradaString;
+private int duradaVideo;
+private LocalDate dataUpload; 
+private EstatReproduccio estatReproduccio = EstatReproduccio.PLAY; 
+private EstatUpload estatUpload; 
+private ArrayList<Tag> llistatEtiquetes = new ArrayList<Tag>();
+private String etiquetesString = ""; 
+private boolean videoaturat = false; 
 
 
 public Video(String titol, String duradaString) {
@@ -67,6 +67,9 @@ public enum EstatReproduccio{
 	
 	public boolean videoaturat() {
 		return videoaturat;
+	}
+	public String getDuradaString() {
+	return duradaString; 
 	}
 
 //PLAY, PAUSE, STOP i RESET VIDEO

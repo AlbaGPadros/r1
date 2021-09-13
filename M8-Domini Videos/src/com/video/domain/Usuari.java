@@ -5,11 +5,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Usuari {
-String nom; 
-String cognom; 
-String password; 
-LocalDate dataRegistre; 
-ArrayList<Video> llistatVideos = new ArrayList<Video>();
+private String nom; 
+private String cognom; 
+private String password; 
+private LocalDate dataRegistre; 
+private ArrayList<Video> llistatVideos = new ArrayList<Video>();
 
 
 public Usuari(String nom, String cognom, String password) {

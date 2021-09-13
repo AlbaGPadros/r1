@@ -3,10 +3,10 @@ package com.video.domain;
 import java.util.Scanner;
 
 public class ThreadPausarParar extends Thread {
-	Scanner entrada2 = new Scanner(System.in);
-	String pausarParar; 
-	Boolean stop = false; 
-	Video video; 
+	private Scanner entrada2 = new Scanner(System.in);
+	private String pausarParar; 
+	private Boolean stop = false; 
+	private Video video; 
 	
 public ThreadPausarParar(Video video) {
 	this.video = video; 

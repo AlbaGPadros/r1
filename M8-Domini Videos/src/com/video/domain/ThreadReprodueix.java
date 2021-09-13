@@ -3,10 +3,10 @@ package com.video.domain;
 public class ThreadReprodueix extends Thread {
 
 
-Video video; 
-int duradaRep = 0; 
-String estatRep;
-boolean stop = false; 
+private Video video; 
+private int duradaRep = 0; 
+private String estatRep;
+private boolean stop = false; 
 
 public ThreadReprodueix(Video video) {
 	this.video = video; 
@@ -23,7 +23,7 @@ public ThreadReprodueix(Video video) {
 		estatRep = video.getEstatReproduccio().name();
 		do {
 			estatRep = video.getEstatReproduccio().name();
-			int duradaVid = video.duradaInt(video.duradaString);
+			int duradaVid = video.duradaInt(video.getDuradaString());
 			if(estatRep.equals("PLAY")) {
 				for (int i = duradaRep; i<=duradaVid; i++) { 
 					imprimeixCrono(hor, min, seg);
@@ -38,7 +38,7 @@ public ThreadReprodueix(Video video) {
 					if(estatRep.equals("PAUSE")) {
 						break; 
 					}}
-				if ((duradaRep) >= video.duradaInt(video.duradaString)) {
+				if ((duradaRep) >= duradaVid) {
 					stop = true; 
 					video.stopVideo();
 				}

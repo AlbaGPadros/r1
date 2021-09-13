@@ -1,7 +1,7 @@
 package com.video.domain;
 
 public class Tag {
-String tagName; 
+	private String tagName; 
 
 
 public Tag(String tagName) {

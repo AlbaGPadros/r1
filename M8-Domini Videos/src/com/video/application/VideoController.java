@@ -5,11 +5,11 @@ import java.util.Scanner;
 import com.video.domain.*;
 
 public class VideoController {
-	Scanner entrada = new Scanner(System.in);
-	String nom, cognom, password; 
-	String duradaString, titol,  etiquetesEntreComes; 
-	Usuari usuari; 
-	boolean duradaCorrecta; 
+	private Scanner entrada = new Scanner(System.in);
+	private String nom, cognom, password; 
+	private String duradaString, titol,  etiquetesEntreComes; 
+	private Usuari usuari; 
+	private boolean duradaCorrecta; 
 	
 //NOU USUARI
 	public void nouUsuari(String nom, String cognom, String Password) {
