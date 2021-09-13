@@ -34,9 +34,5 @@ public void run() {
 	}
 	} while(!stop);
 	}
-/*
-public boolean getStop() {
-	return stop; 
-}
-*/
+
 }

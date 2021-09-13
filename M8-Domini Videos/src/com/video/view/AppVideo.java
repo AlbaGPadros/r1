@@ -13,21 +13,7 @@ public class AppVideo {
 		boolean correcte = false; 
 		String stringOpcio =""; 
 		int opcio=0; 
-		/*
-		do { //INTRODUEIX INFO USUARI
-			System.out.print("Nom:");
-			nom = entrada.next(); 
-			System.out.print("Cognom:");
-			cognom = entrada.next(); 
-			System.out.print("Password:");
-			password = entrada.next(); 
-				try{ controller.comprovaCampsBuitsUsuari(nom, cognom, password);
-				correcte = true; 
-				System.out.println("Èxit");
-				} catch (CampsBuits e) { System.out.println(e);
-				}
-		} while (correcte = false);
-		*/	
+
 		controller.nouUsuari("Alba", "padrós", "1234");
 		
 
