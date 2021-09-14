@@ -14,7 +14,14 @@ public class AppVideo {
 		String stringOpcio =""; 
 		int opcio=0; 
 
-		controller.nouUsuari("Alba", "padrós", "1234");
+		System.out.println("Introdueix un nom");
+		nom = entrada.next();
+		System.out.println("Introdueix un cognom");
+		cognom = entrada.next();
+		System.out.println("Introdueix un password");
+		password = entrada.next();
+
+		controller.nouUsuari(nom, cognom, password);
 		
 
 		do {
