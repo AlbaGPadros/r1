@@ -59,7 +59,6 @@ public String getPotenciaMaxProp() {
 public void velocitatAPotencia() {
 	int potenciaTotal; 
 	potenciaTotal= (int) Math.pow(((velocitatObj-velocitatAct)/100),2); 
-	//System.out.println(potenciaTotal);
 	assignarPotencia(potenciaTotal);
 }
 
