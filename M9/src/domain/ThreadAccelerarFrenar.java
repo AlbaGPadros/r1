@@ -12,7 +12,7 @@ public ThreadAccelerarFrenar(Propulsor propulsor, int acceleracio) {
 		while(propulsor.getPotenciaAct()!=propulsor.getPotenciaObj()) {
 			
 			try{sleep(500);} catch (Exception e) {	}
-			
+			//desaccelera
 			if (propulsor.getPotenciaAct()>propulsor.getPotenciaObj()) {
 				if((propulsor.getPotenciaAct()-propulsor.getPotenciaObj())<acceleracio) {
 					propulsor.setPotenciaAct(propulsor.getPotenciaObj());
@@ -20,6 +20,7 @@ public ThreadAccelerarFrenar(Propulsor propulsor, int acceleracio) {
 				propulsor.setPotenciaAct(propulsor.getPotenciaAct()-acceleracio);
 				}
 			}
+			//accelera
 			else if(propulsor.getPotenciaAct()<propulsor.getPotenciaObj()) {
 				if((propulsor.getPotenciaObj()-propulsor.getPotenciaAct())<acceleracio) {
 					propulsor.setPotenciaAct(propulsor.getPotenciaObj());

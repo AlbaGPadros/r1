@@ -52,6 +52,7 @@ public class CohetControl {
 		}
 	}
 
+	//TRANSFORMA V a P (per després repartir-la)
 	public void velocitatAPotencia(int velocitatObjectiu, int cohet) {
 		if(cohet ==1) {
 			cohet1.setVelocitatObj(velocitatObjectiu);
@@ -64,19 +65,8 @@ public class CohetControl {
 			cohet2.enMarxa(); 
 		}
 	}
-	/*
-	public void VelocitatAPotencia1(int velocitatObjectiu) {
-		cohet1.setVelocitatObj(velocitatObjectiu);
-		cohet1.velocitatAPotencia();
-		cohet1.enMarxa();
-	}
-	public void VelocitatAPotencia2(int velocitatObjectiu) {
-		cohet2.setVelocitatObj(velocitatObjectiu);
-		cohet2.velocitatAPotencia();
-		cohet2.enMarxa(); 
-	}
-	*/
-	
+
+	//CANVI VALOR DE L'ACCELERACIÓ
 	public void canviaAcceleracio(int acceleracio, int cohet) {
 		if (cohet ==1) {
 			cohet1.canviaAcceleracio(acceleracio);
@@ -85,16 +75,8 @@ public class CohetControl {
 			cohet2.canviaAcceleracio(acceleracio);
 		}
 	}
-	/*
-	public void canviaAcceleracio1(int acceleracio) {
-		cohet1.canviaAcceleracio(acceleracio);
-	}
-	
-	public void canviaAcceleracio2(int acceleracio) {
-		cohet2.canviaAcceleracio(acceleracio);
-	}
-*/
 
+	//RETORNA INFO PROPULSORS (per al frame)
 	public String infoPropulsors1() {
 		return cohet1.infoPropulsors();
 	}
