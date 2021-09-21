@@ -81,24 +81,26 @@ public void assignarPotencia(int potenciaTotal) {
 		System.out.println("El cohet "+ id+ " no disposa de prou potencia");
 	}
 }
+
+//POSA EN MARXA ELS PROPULSORS
 public void enMarxa() {
 	for (int i = 0; i<arrayPropulsors.length; i++) {
 		arrayPropulsors[i].marxa();
 	}
 }
 
+//ARROSSEGA EL CANVI D'ACCELERACIÓ
 public void canviaAcceleracio(int acceleracio) {
 	for (int i = 0; i<arrayPropulsors.length; i++) {
 		arrayPropulsors[i].canviaAcceleracio(acceleracio);
 	}
 }
 
-//això segurament VA FORA
+//IMPRIMEIX INFO PROPULSORS
 public String infoPropulsors() {
 	String infoPropulsors = "";
 	for (int i = 1; i<arrayPropulsors.length; i++) {
 		infoPropulsors = arrayPropulsors[i].getPotenciaAct() + "  " + arrayPropulsors[i].getPotenciaObj()+ "\n";
-		//arrayPropulsors[i].marxa();
 	}
 	return infoPropulsors;
 	

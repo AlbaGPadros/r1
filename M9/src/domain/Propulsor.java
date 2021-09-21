@@ -34,7 +34,7 @@ public void setPotenciaObjAcc() {
 	potenciaObj=potenciaMax;
 }
 
-
+//SETTERS
 public void setPotenciaAct(int potenciaAct) {
 	this.potenciaAct=potenciaAct; 
 }
@@ -46,11 +46,12 @@ public void setPotenciaObj(int potenciaObj) {
 	this.potenciaObj=potenciaObj; 
 }
 
+//ARROSSEGA CANVI D'ACCELERACIÓ
 public void canviaAcceleracio(int acceleracio) {
-	//accFre.interrupt();
 	this.acceleracio = acceleracio; 
 }
 
+//POSA EN MARXA EL THREAD
 public void marxa() {
 accFre = new ThreadAccelerarFrenar(this, acceleracio);
 accFre.start();

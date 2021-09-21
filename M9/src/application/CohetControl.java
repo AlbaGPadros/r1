@@ -27,6 +27,7 @@ public class CohetControl {
 		frame.SetCohets(cohet1, cohet2);
 	}
 	
+	//Imprimeix informació inicial cohet
 	public void printInfo(){
 		System.out.println("Rocket id =" +cohet1.getId() + ": Té " + cohet1.getNumPropulsors()+ " propulsoes");
 		System.out.println("Propulsors: [" + cohet1.getPotenciaMaxProp()+"]");
@@ -34,15 +35,16 @@ public class CohetControl {
 		System.out.println("Propulsors: [" + cohet2.getPotenciaMaxProp()+"]");
 	}
 	
+	//ESCOLTA MODIFICACIONS DEL PANELL
 	public void bucleCohet() {
 		while(true) {
 			if ((frame.getModificacio()> modificacio) && frame.getModificacio()%2!=0) {
-				canviaAcceleracio1(frame.getAcceleracio1());
-				VelocitatAPotencia1(frame.getVelocitat1());
+				canviaAcceleracio(frame.getAcceleracio1(), 1);
+				velocitatAPotencia(frame.getVelocitat1(), 1);
 			}
 			else if((frame.getModificacio()> modificacio) && frame.getModificacio()%2==0) {
-				canviaAcceleracio2(frame.getAcceleracio2());
-				VelocitatAPotencia2(frame.getVelocitat2());
+				canviaAcceleracio(frame.getAcceleracio2(), 2);
+				velocitatAPotencia(frame.getVelocitat2(),2);
 
 			}
 			modificacio = frame.getModificacio();
@@ -50,7 +52,19 @@ public class CohetControl {
 		}
 	}
 
-
+	public void velocitatAPotencia(int velocitatObjectiu, int cohet) {
+		if(cohet ==1) {
+			cohet1.setVelocitatObj(velocitatObjectiu);
+			cohet1.velocitatAPotencia();
+			cohet1.enMarxa();
+		}
+		else if (cohet ==2) {
+			cohet2.setVelocitatObj(velocitatObjectiu);
+			cohet2.velocitatAPotencia();
+			cohet2.enMarxa(); 
+		}
+	}
+	/*
 	public void VelocitatAPotencia1(int velocitatObjectiu) {
 		cohet1.setVelocitatObj(velocitatObjectiu);
 		cohet1.velocitatAPotencia();
@@ -61,7 +75,17 @@ public class CohetControl {
 		cohet2.velocitatAPotencia();
 		cohet2.enMarxa(); 
 	}
+	*/
 	
+	public void canviaAcceleracio(int acceleracio, int cohet) {
+		if (cohet ==1) {
+			cohet1.canviaAcceleracio(acceleracio);
+		}
+		else if (cohet ==2) {
+			cohet2.canviaAcceleracio(acceleracio);
+		}
+	}
+	/*
 	public void canviaAcceleracio1(int acceleracio) {
 		cohet1.canviaAcceleracio(acceleracio);
 	}
@@ -69,7 +93,7 @@ public class CohetControl {
 	public void canviaAcceleracio2(int acceleracio) {
 		cohet2.canviaAcceleracio(acceleracio);
 	}
-
+*/
 
 	public String infoPropulsors1() {
 		return cohet1.infoPropulsors();

@@ -205,12 +205,12 @@ public void defineixLabelsAccVel() {
 
 
 }
-
+//ESCOLTA EL CANVI EN ELS SLIDERS QUAN S'APRETI EL BOTO
 public void actionPerformed(ActionEvent e) {
 	 if(e.getSource() == boto1) {
 		 velocitat1 = sliderv1.getValue();
 		 acceleracio1 = slidera1.getValue();
-		 if (modificacio%2==0) {
+		 if (modificacio%2==0) { //Cada cop que es prem, augmenta el valor modificació. Que sigui senar o parell determinarà si és un o l'altre cohet. 
 			 modificacio++;
 		 }
 		 if (modificacio%2!=0) {
@@ -243,6 +243,5 @@ public int getAcceleracio2(){
 public int getModificacio() {
 	return modificacio;
 }
-//public int getVelocitat
 
 }
