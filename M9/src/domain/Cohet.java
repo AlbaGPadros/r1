@@ -48,7 +48,7 @@ public void creaPropulsors(int potenciaMax) {
 
 public String getPotenciaMaxProp() {
 	String potenciaMaxProp =" ";
-	for (int i = 1; i<arrayPropulsors.length; i++) {
+	for (int i = 0; i<arrayPropulsors.length; i++) {
 		potenciaMaxProp = potenciaMaxProp + arrayPropulsors[i].getPotenciaMax() + " ";
 	}
 	return potenciaMaxProp; 
@@ -58,14 +58,14 @@ public String getPotenciaMaxProp() {
 //VELOCITAT A POTÈNCIA
 public void velocitatAPotencia() {
 	int potenciaTotal; 
-	potenciaTotal= (int) Math.sqrt((velocitatObj-velocitatAct)/100); 
-	System.out.println(potenciaTotal);
+	potenciaTotal= (int) Math.pow(((velocitatObj-velocitatAct)/100),2); 
+	//System.out.println(potenciaTotal);
 	assignarPotencia(potenciaTotal);
 }
 
 public void assignarPotencia(int potenciaTotal) {
 	int potenciaRestant = potenciaTotal;
-	for (int i = 1; i<arrayPropulsors.length; i++) {
+	for (int i = 0; i<arrayPropulsors.length; i++) {
 		if(potenciaRestant>=arrayPropulsors[i].getPotenciaMax()) {
 			arrayPropulsors[i].setPotenciaObj(arrayPropulsors[i].getPotenciaMax());
 			potenciaRestant = potenciaRestant - arrayPropulsors[i].getPotenciaObj(); 
@@ -76,22 +76,20 @@ public void assignarPotencia(int potenciaTotal) {
 			System.out.println("Potencia 0");
 			break; 
 		}
-		System.out.println(potenciaRestant);
 	}
 	if (potenciaRestant==0) {
-		System.out.println("EXIT");
 	} else {
 		System.out.println("El cohet "+ id+ " no disposa de prou potencia");
 	}
 }
 public void enMarxa() {
-	for (int i = 1; i<arrayPropulsors.length; i++) {
+	for (int i = 0; i<arrayPropulsors.length; i++) {
 		arrayPropulsors[i].marxa();
 	}
 }
 
 public void canviaAcceleracio(int acceleracio) {
-	for (int i = 1; i<arrayPropulsors.length; i++) {
+	for (int i = 0; i<arrayPropulsors.length; i++) {
 		arrayPropulsors[i].canviaAcceleracio(acceleracio);
 	}
 }
@@ -106,13 +104,5 @@ public String infoPropulsors() {
 	return infoPropulsors;
 	
 }
-/*
-//FRENAR FINS A 0
-public void frenar() {
-	for (int i = 1; i<arrayPropulsors.length; i++) {
-		arrayPropulsors[1].setPotenciaObjFre();
-		arrayPropulsors[i].marxa();
-	}
-}
-*/
+
 }

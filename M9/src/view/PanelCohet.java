@@ -133,11 +133,11 @@ public void defineixLabels() {
 }
 
 public void defineixSlider() {
-	sliderv1= new JSlider(0,500000); 
+	sliderv1= new JSlider(0,1500); 
 	sliderv1.setBounds(60,320,300,50);
 	sliderv1.setBackground(blauEspai);
 	
-	sliderv2= new JSlider(0,500000); 
+	sliderv2= new JSlider(0,1500); 
 	sliderv2.setBounds(660,320,300,50);
 	sliderv2.setBackground(blauEspai);
 	
@@ -154,9 +154,9 @@ public void defineixLabelsAccVel() {
 	vel = new JLabel("VELOCITAT");
 	velc2 =new JLabel("VELOCITAT");
 	vel1 = new JLabel("0");
-	vel2 = new JLabel("500000");
+	vel2 = new JLabel("1500");
 	vel3 = new JLabel("0");
-	vel4 = new JLabel("500000");
+	vel4 = new JLabel("1500");
 	acc = new JLabel("ACCELERACIÓ");
 	accc2 = new JLabel("ACCELERACIÓ");
 	acc1 = new JLabel("1");
