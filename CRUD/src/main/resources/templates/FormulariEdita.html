@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>AFEGEIX O EDITA</title>
+</head>
+<body>
+<h1>EDITA UN TREBALLADOR</h1>
+	
+	<form action=# th:action="${action}" th:object="${Treballador}" method="post">
+			<br>
+				<input type=hidden name=id th:value="${Treballador?.id}">
+				NOM: <input type=text name=nom th:value="${Treballador?.nom}">
+				COGNOM: <input type=text name=cognom th:value="${Treballador?.cognom}"><br>
+				FEINA: 
+						<select name="feina">
+							<option th:each="feina :${T(com.example.CRUD.bean.Feina).values()}"
+									th:value="${feina}"
+									th:text="${feina}">
+							</option>
+						</select> 		<br>
+					<input type=submit name=submit value="Desa">
+		</form>
+	<a th:href="@{/}">Torna a l'index</a>
+		
+</body>
+</html>

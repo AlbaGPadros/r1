@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>TREBALLADORS</title>
+</head>
+<body>
+<h1>Llistat de treballadors</h1>
+	<table>
+		<thead>
+			<tr><th> ID <th> NOM <th> COGNOM <th> FEINA <th> SALARI </th> ESBORRA </tr> 
+		</thead>
+		<tbody>
+			<tr th:if="${treballadors.empty}">
+				<td colspan = "2"> No hi ha treballadors per mostrar </td>
+			</tr>
+			<tr th:each="Treballador: ${treballadors}">
+				<td><span th:text="${Treballador.getId}"></span></td>
+				<td><span th:text="${Treballador.getNom}"></span></td>
+				<td><span th:text="${Treballador.getCognom}"></span></td>		
+				<td><span th:text="${Treballador.getFeina}"></span></td>
+				<td><span th:text="${Treballador.getSalari}"></span></td>	
+				<td><a th:href="@{/esborra/}+${Treballador.getId}">Esborra</a></td>
+				<td><a th:href="@{/modificar/}+${Treballador.getId}">Modificar</a></td>
+									
+		</tbody>
+	</table>
+	<a th:href="@{/formnoutreballador/}">Insertar nou</a>
+	<!-- 
+	<h2>Selecciona treballadors per feina: </h2>
+		<form action=# th:action="${/filtra}+${Feina}" th:object="${feina}" method="get">	
+			<select name="feina">
+				<option th:each="feina :${T(com.example.CRUD.bean.Feina).values()}"
+						th:value="${feina}"
+						th:text="${feina}">
+				</option>
+			</select> 		<br>
+		<input type=submit name=submit value="Filtra">
+		</form> -->
+	</body>
+</html>
