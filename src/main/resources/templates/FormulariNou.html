@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>AFEGEIX UN TREBALLADOR</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<div class = "container-fluid">	
+	<div class = "row justify-content-center mt-4">
+			<div class="jumbotron text-center">
+				<h1>Afegeix un treballador</h1>
+			</div>
+		<div class = "col-md-6">
+			<form action=# th:action="@{/inserta}" th:object="${Treballador}" method="post">	
+						NOM: <input type=text name=nom th:value="${Treballador?.setNom}" class="form-control md-10">
+						COGNOM: <input type=text name=cognom th:value="${Treballador?.setCognom}" class="form-control mb-2 col-3">
+						FEINA: 
+								<select class="form-select"  name="feina">
+									<option th:each="feina :${T(com.example.CRUD.bean.Feina).values()}"
+											th:value="${feina}"
+											th:text="${feina}">
+									</option>
+								</select> 		<br>
+							<input type=submit name=submit value="Desa" class="btn btn-primary">
+				</form>
+		</div>	
+	</div>	
+</div>	
+
+</body>
+</html>

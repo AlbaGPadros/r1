@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>TREBALLADORS</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class = "container-fluid">
+	<div class = "row justify-content-center mt-4">
+		<div class = "col-md-10">
+			<div class="jumbotron text-center">
+  				<h1>Llistat de treballadors</h1>
+			</div>
+				<table class ="table table-responsible table-striped">
+					<thead>
+						<tr><th> ID <th> NOM <th> COGNOM <th> FEINA <th> SALARI <th> ESBORRA <th> MODIFICA </tr> 
+					</thead>
+					<tbody>
+						<tr th:if="${treballadors.empty}">
+							<td colspan = "2"> No hi ha treballadors per mostrar </td>
+						</tr>
+						<tr th:each="Treballador: ${treballadors}">
+							<td><span th:text="${Treballador.getId}"></span></td>
+							<td><span th:text="${Treballador.getNom}"></span></td>
+							<td><span th:text="${Treballador.getCognom}"></span></td>		
+							<td><span th:text="${Treballador.getFeina}"></span></td>
+							<td><span th:text="${Treballador.getSalari}"></span></td>	
+							<td> <a th:href="@{/esborra/}+${Treballador.getId}" class="btn btn-danger">Esborra</a>
+							<td> <a th:href="@{/modificar/}+${Treballador.getId}" class="btn btn-warning">Modificar</a>										
+					</tbody>
+				</table>
+				<a th:href="@{/formnoutreballador/}" class="btn btn-success">Insertar Nou</a> <br>
+		</div>
+	</div>
+	<div class = "row justify-content-center mt-4">
+		<div class="col-sm-6">
+			<h2>Selecciona treballadors per feina: </h2>
+			<form action=# th:action="@{/filtra}" th:object="${Treballador}" method="post">
+								<select class="form-select"  name="feina">
+									<option th:each="feina :${T(com.example.CRUD.bean.Feina).values()}"
+											th:value="${feina}"
+											th:text="${feina}">
+									</option>
+								</select> 		<br>
+							<input type=submit name=submit value="Filtra" class="btn btn-primary"> <a th:href="@{/}" class="btn btn-info">Mostra'ls tots</a> <br>
+				</form>
+		</div>
+	</div>
+	</div>
+	
+	
+	</body>
+</html>
